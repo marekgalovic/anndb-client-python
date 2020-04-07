@@ -1,0 +1,4 @@
+.DS_Store
+proto
+*.pyc
+*/**/__pycache__/*
