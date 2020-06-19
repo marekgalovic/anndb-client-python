@@ -21,7 +21,7 @@ class DatasetManager:
 			yield pb
 
 	def get(self, id:UUID) -> Dataset:
-		proto = self._dataset_manager_stub.Get(UUIDRequest(id=id))
+		proto = self._dataset_manager_stub.Get(UUIDRequest(id=id.bytes))
 
 		return Dataset(self._data_manager_stub, self._search_stub, proto)
 
