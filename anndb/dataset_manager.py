@@ -1,12 +1,12 @@
 from typing import Iterator
 from uuid import UUID
 
-from dataset_pb2_grpc import DatasetManagerStub, DataManagerStub
-from search_pb2_grpc import SearchStub
-from dataset_pb2 import Dataset as DatasetPb, Space as SpacePb
-from core_pb2 import UUIDRequest, EmptyMessage
+from anndb.dataset_pb2_grpc import DatasetManagerStub, DataManagerStub
+from anndb.search_pb2_grpc import SearchStub
+from anndb.dataset_pb2 import Dataset as DatasetPb, Space as SpacePb
+from anndb.core_pb2 import UUIDRequest, EmptyMessage
 
-from dataset import Dataset
+from anndb.dataset import Dataset
 
 class DatasetManager:
 

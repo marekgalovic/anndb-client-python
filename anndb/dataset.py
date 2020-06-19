@@ -1,9 +1,9 @@
 from typing import List, Iterator, Tuple
 
-from dataset_pb2_grpc import DataManagerStub
-from search_pb2_grpc import SearchStub
-from dataset_pb2 import Dataset as DatasetPb, InsertRequest, RemoveRequest
-from search_pb2 import SearchRequest
+from anndb.dataset_pb2_grpc import DataManagerStub
+from anndb.search_pb2_grpc import SearchStub
+from anndb.dataset_pb2 import Dataset as DatasetPb, InsertRequest, RemoveRequest
+from anndb.search_pb2 import SearchRequest
 
 class Dataset:
 
