@@ -2,3 +2,5 @@
 proto
 *.pyc
 */**/__pycache__/*
+dist/*
+anndb.egg-info/*
