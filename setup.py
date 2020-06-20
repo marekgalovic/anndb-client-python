@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 
 setup(name='anndb',
     version=VERSION,
@@ -13,6 +13,7 @@ setup(name='anndb',
     packages=find_packages(),
     zip_safe=False,
     install_requires=[
+        'protobuf',
         'grpcio'
     ],
 )
