@@ -13,7 +13,7 @@ setup(name='anndb',
     packages=find_packages(),
     zip_safe=False,
     install_requires=[
-        'protobuf',
+        'google',
         'grpcio'
     ],
 )
