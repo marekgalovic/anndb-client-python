@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='anndb_pb',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13\x61nndb/dataset.proto\x12\x08\x61nndb_pb\x1a\x10\x61nndb/core.proto\"\xa8\x01\n\rInsertRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\n\n\x02id\x18\x02 \x01(\x04\x12\r\n\x05value\x18\x03 \x03(\x02\x12\x37\n\x08metadata\x18\x04 \x03(\x0b\x32%.anndb_pb.InsertRequest.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xa8\x01\n\rUpdateRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\n\n\x02id\x18\x02 \x01(\x04\x12\r\n\x05value\x18\x03 \x03(\x02\x12\x37\n\x08metadata\x18\x04 \x03(\x0b\x32%.anndb_pb.UpdateRequest.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\rRemoveRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\n\n\x02id\x18\x02 \x01(\x04\"\x9b\x01\n\tBatchItem\x12\n\n\x02id\x18\x01 \x01(\x04\x12\r\n\x05value\x18\x02 \x03(\x02\x12\x33\n\x08metadata\x18\x03 \x03(\x0b\x32!.anndb_pb.BatchItem.MetadataEntry\x12\r\n\x05level\x18\x04 \x01(\x05\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"F\n\x0c\x42\x61tchRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\"\n\x05items\x18\x02 \x03(\x0b\x32\x13.anndb_pb.BatchItem\"e\n\x15PartitionBatchRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\x14\n\x0cpartition_id\x18\x02 \x01(\x0c\x12\"\n\x05items\x18\x03 \x03(\x0b\x32\x13.anndb_pb.BatchItem\"s\n\rBatchResponse\x12\x33\n\x06\x65rrors\x18\x01 \x03(\x0b\x32#.anndb_pb.BatchResponse.ErrorsEntry\x1a-\n\x0b\x45rrorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xa6\x01\n\x07\x44\x61taset\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x11\n\tdimension\x18\x02 \x01(\r\x12\x1e\n\x05space\x18\x03 \x01(\x0e\x32\x0f.anndb_pb.Space\x12\x17\n\x0fpartition_count\x18\x04 \x01(\r\x12\x1a\n\x12replication_factor\x18\x05 \x01(\r\x12\'\n\npartitions\x18\x06 \x03(\x0b\x32\x13.anndb_pb.Partition\")\n\tPartition\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x10\n\x08node_ids\x18\x02 \x03(\x04\"o\n\x14\x44\x61tasetManagerChange\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\".anndb_pb.DatasetManagerChangeType\x12\x17\n\x0fnotification_id\x18\x02 \x01(\x0c\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"\x91\x01\n\x1b\x44\x61tasetPartitionNodesChange\x12\x37\n\x04type\x18\x01 \x01(\x0e\x32).anndb_pb.DatasetPartitionNodesChangeType\x12\x12\n\ndataset_id\x18\x02 \x01(\x0c\x12\x14\n\x0cpartition_id\x18\x03 \x01(\x0c\x12\x0f\n\x07node_id\x18\x04 \x01(\x04\"\x97\x02\n\x0fPartitionChange\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.anndb_pb.PartitionChangeType\x12\x17\n\x0fnotification_id\x18\x02 \x01(\x0c\x12\n\n\x02id\x18\x03 \x01(\x04\x12\r\n\x05value\x18\x04 \x03(\x02\x12\x39\n\x08metadata\x18\x05 \x03(\x0b\x32\'.anndb_pb.PartitionChange.MetadataEntry\x12\r\n\x05level\x18\x06 \x01(\x05\x12(\n\x0b\x62\x61tch_items\x18\x07 \x03(\x0b\x32\x13.anndb_pb.BatchItem\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"=\n\x16\x44\x61tasetManagerSnapshot\x12#\n\x08\x64\x61tasets\x18\x01 \x03(\x0b\x32\x11.anndb_pb.Dataset*1\n\x05Space\x12\r\n\tEuclidean\x10\x00\x12\r\n\tManhattan\x10\x01\x12\n\n\x06\x43osine\x10\x02*\x84\x01\n\x18\x44\x61tasetManagerChangeType\x12\x1f\n\x1b\x44\x61tasetManagerCreateDataset\x10\x00\x12\x1f\n\x1b\x44\x61tasetManagerDeleteDataset\x10\x01\x12&\n\"DatasetManagerUpdatePartitionNodes\x10\x02*t\n\x1f\x44\x61tasetPartitionNodesChangeType\x12&\n\"DatasetPartitionNodesChangeAddNode\x10\x00\x12)\n%DatasetPartitionNodesChangeRemoveNode\x10\x01*\xe4\x01\n\x13PartitionChangeType\x12\x1e\n\x1aPartitionChangeInsertValue\x10\x00\x12\x1e\n\x1aPartitionChangeUpdateValue\x10\x01\x12\x1e\n\x1aPartitionChangeDeleteValue\x10\x02\x12#\n\x1fPartitionChangeBatchInsertValue\x10\x03\x12#\n\x1fPartitionChangeBatchUpdateValue\x10\x04\x12#\n\x1fPartitionChangeBatchDeleteValue\x10\x05\x32\xdf\x01\n\x0e\x44\x61tasetManager\x12\x33\n\x04List\x12\x16.anndb_pb.EmptyMessage\x1a\x11.anndb_pb.Dataset0\x01\x12/\n\x03Get\x12\x15.anndb_pb.UUIDRequest\x1a\x11.anndb_pb.Dataset\x12.\n\x06\x43reate\x12\x11.anndb_pb.Dataset\x1a\x11.anndb_pb.Dataset\x12\x37\n\x06\x44\x65lete\x12\x15.anndb_pb.UUIDRequest\x1a\x16.anndb_pb.EmptyMessage2\xf4\x04\n\x0b\x44\x61taManager\x12\x39\n\x06Insert\x12\x17.anndb_pb.InsertRequest\x1a\x16.anndb_pb.EmptyMessage\x12\x39\n\x06Update\x12\x17.anndb_pb.UpdateRequest\x1a\x16.anndb_pb.EmptyMessage\x12\x39\n\x06Remove\x12\x17.anndb_pb.RemoveRequest\x1a\x16.anndb_pb.EmptyMessage\x12>\n\x0b\x42\x61tchInsert\x12\x16.anndb_pb.BatchRequest\x1a\x17.anndb_pb.BatchResponse\x12>\n\x0b\x42\x61tchUpdate\x12\x16.anndb_pb.BatchRequest\x1a\x17.anndb_pb.BatchResponse\x12>\n\x0b\x42\x61tchRemove\x12\x16.anndb_pb.BatchRequest\x1a\x17.anndb_pb.BatchResponse\x12P\n\x14PartitionBatchInsert\x12\x1f.anndb_pb.PartitionBatchRequest\x1a\x17.anndb_pb.BatchResponse\x12P\n\x14PartitionBatchUpdate\x12\x1f.anndb_pb.PartitionBatchRequest\x1a\x17.anndb_pb.BatchResponse\x12P\n\x14PartitionBatchRemove\x12\x1f.anndb_pb.PartitionBatchRequest\x1a\x17.anndb_pb.BatchResponseb\x06proto3')
+  serialized_pb=_b('\n\x13\x61nndb/dataset.proto\x12\x08\x61nndb_pb\x1a\x10\x61nndb/core.proto\"(\n\x13ListDatasetsRequest\x12\x11\n\twith_size\x18\x01 \x01(\x08\":\n\x11GetDatasetRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\x11\n\twith_size\x18\x02 \x01(\x08\"\xa8\x01\n\rInsertRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\n\n\x02id\x18\x02 \x01(\x04\x12\r\n\x05value\x18\x03 \x03(\x02\x12\x37\n\x08metadata\x18\x04 \x03(\x0b\x32%.anndb_pb.InsertRequest.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xa8\x01\n\rUpdateRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\n\n\x02id\x18\x02 \x01(\x04\x12\r\n\x05value\x18\x03 \x03(\x02\x12\x37\n\x08metadata\x18\x04 \x03(\x0b\x32%.anndb_pb.UpdateRequest.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\rRemoveRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\n\n\x02id\x18\x02 \x01(\x04\"\x9b\x01\n\tBatchItem\x12\n\n\x02id\x18\x01 \x01(\x04\x12\r\n\x05value\x18\x02 \x03(\x02\x12\x33\n\x08metadata\x18\x03 \x03(\x0b\x32!.anndb_pb.BatchItem.MetadataEntry\x12\r\n\x05level\x18\x04 \x01(\x05\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"F\n\x0c\x42\x61tchRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\"\n\x05items\x18\x02 \x03(\x0b\x32\x13.anndb_pb.BatchItem\"e\n\x15PartitionBatchRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\x14\n\x0cpartition_id\x18\x02 \x01(\x0c\x12\"\n\x05items\x18\x03 \x03(\x0b\x32\x13.anndb_pb.BatchItem\"s\n\rBatchResponse\x12\x33\n\x06\x65rrors\x18\x01 \x03(\x0b\x32#.anndb_pb.BatchResponse.ErrorsEntry\x1a-\n\x0b\x45rrorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x13PartitionLenRequest\x12\x12\n\ndataset_id\x18\x01 \x01(\x0c\x12\x14\n\x0cpartition_id\x18\x02 \x01(\x0c\"#\n\x14PartitionLenResponse\x12\x0b\n\x03len\x18\x01 \x01(\x04\"\xb4\x01\n\x07\x44\x61taset\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x11\n\tdimension\x18\x02 \x01(\r\x12\x1e\n\x05space\x18\x03 \x01(\x0e\x32\x0f.anndb_pb.Space\x12\x17\n\x0fpartition_count\x18\x04 \x01(\r\x12\x1a\n\x12replication_factor\x18\x05 \x01(\r\x12\'\n\npartitions\x18\x06 \x03(\x0b\x32\x13.anndb_pb.Partition\x12\x0c\n\x04size\x18\x07 \x01(\x04\")\n\tPartition\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x10\n\x08node_ids\x18\x02 \x03(\x04\"o\n\x14\x44\x61tasetManagerChange\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\".anndb_pb.DatasetManagerChangeType\x12\x17\n\x0fnotification_id\x18\x02 \x01(\x0c\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"\x91\x01\n\x1b\x44\x61tasetPartitionNodesChange\x12\x37\n\x04type\x18\x01 \x01(\x0e\x32).anndb_pb.DatasetPartitionNodesChangeType\x12\x12\n\ndataset_id\x18\x02 \x01(\x0c\x12\x14\n\x0cpartition_id\x18\x03 \x01(\x0c\x12\x0f\n\x07node_id\x18\x04 \x01(\x04\"\x97\x02\n\x0fPartitionChange\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.anndb_pb.PartitionChangeType\x12\x17\n\x0fnotification_id\x18\x02 \x01(\x0c\x12\n\n\x02id\x18\x03 \x01(\x04\x12\r\n\x05value\x18\x04 \x03(\x02\x12\x39\n\x08metadata\x18\x05 \x03(\x0b\x32\'.anndb_pb.PartitionChange.MetadataEntry\x12\r\n\x05level\x18\x06 \x01(\x05\x12(\n\x0b\x62\x61tch_items\x18\x07 \x03(\x0b\x32\x13.anndb_pb.BatchItem\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"=\n\x16\x44\x61tasetManagerSnapshot\x12#\n\x08\x64\x61tasets\x18\x01 \x03(\x0b\x32\x11.anndb_pb.Dataset*1\n\x05Space\x12\r\n\tEuclidean\x10\x00\x12\r\n\tManhattan\x10\x01\x12\n\n\x06\x43osine\x10\x02*\x84\x01\n\x18\x44\x61tasetManagerChangeType\x12\x1f\n\x1b\x44\x61tasetManagerCreateDataset\x10\x00\x12\x1f\n\x1b\x44\x61tasetManagerDeleteDataset\x10\x01\x12&\n\"DatasetManagerUpdatePartitionNodes\x10\x02*t\n\x1f\x44\x61tasetPartitionNodesChangeType\x12&\n\"DatasetPartitionNodesChangeAddNode\x10\x00\x12)\n%DatasetPartitionNodesChangeRemoveNode\x10\x01*\xe4\x01\n\x13PartitionChangeType\x12\x1e\n\x1aPartitionChangeInsertValue\x10\x00\x12\x1e\n\x1aPartitionChangeUpdateValue\x10\x01\x12\x1e\n\x1aPartitionChangeDeleteValue\x10\x02\x12#\n\x1fPartitionChangeBatchInsertValue\x10\x03\x12#\n\x1fPartitionChangeBatchUpdateValue\x10\x04\x12#\n\x1fPartitionChangeBatchDeleteValue\x10\x05\x32\xec\x01\n\x0e\x44\x61tasetManager\x12:\n\x04List\x12\x1d.anndb_pb.ListDatasetsRequest\x1a\x11.anndb_pb.Dataset0\x01\x12\x35\n\x03Get\x12\x1b.anndb_pb.GetDatasetRequest\x1a\x11.anndb_pb.Dataset\x12.\n\x06\x43reate\x12\x11.anndb_pb.Dataset\x1a\x11.anndb_pb.Dataset\x12\x37\n\x06\x44\x65lete\x12\x15.anndb_pb.UUIDRequest\x1a\x16.anndb_pb.EmptyMessage2\xc3\x05\n\x0b\x44\x61taManager\x12\x39\n\x06Insert\x12\x17.anndb_pb.InsertRequest\x1a\x16.anndb_pb.EmptyMessage\x12\x39\n\x06Update\x12\x17.anndb_pb.UpdateRequest\x1a\x16.anndb_pb.EmptyMessage\x12\x39\n\x06Remove\x12\x17.anndb_pb.RemoveRequest\x1a\x16.anndb_pb.EmptyMessage\x12>\n\x0b\x42\x61tchInsert\x12\x16.anndb_pb.BatchRequest\x1a\x17.anndb_pb.BatchResponse\x12>\n\x0b\x42\x61tchUpdate\x12\x16.anndb_pb.BatchRequest\x1a\x17.anndb_pb.BatchResponse\x12>\n\x0b\x42\x61tchRemove\x12\x16.anndb_pb.BatchRequest\x1a\x17.anndb_pb.BatchResponse\x12P\n\x14PartitionBatchInsert\x12\x1f.anndb_pb.PartitionBatchRequest\x1a\x17.anndb_pb.BatchResponse\x12P\n\x14PartitionBatchUpdate\x12\x1f.anndb_pb.PartitionBatchRequest\x1a\x17.anndb_pb.BatchResponse\x12P\n\x14PartitionBatchRemove\x12\x1f.anndb_pb.PartitionBatchRequest\x1a\x17.anndb_pb.BatchResponse\x12M\n\x0cPartitionLen\x12\x1d.anndb_pb.PartitionLenRequest\x1a\x1e.anndb_pb.PartitionLenResponseb\x06proto3')
   ,
   dependencies=[anndb_dot_core__pb2.DESCRIPTOR,])
 
@@ -46,8 +46,8 @@ _SPACE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1710,
-  serialized_end=1759,
+  serialized_start=1928,
+  serialized_end=1977,
 )
 _sym_db.RegisterEnumDescriptor(_SPACE)
 
@@ -73,8 +73,8 @@ _DATASETMANAGERCHANGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1762,
-  serialized_end=1894,
+  serialized_start=1980,
+  serialized_end=2112,
 )
 _sym_db.RegisterEnumDescriptor(_DATASETMANAGERCHANGETYPE)
 
@@ -96,8 +96,8 @@ _DATASETPARTITIONNODESCHANGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1896,
-  serialized_end=2012,
+  serialized_start=2114,
+  serialized_end=2230,
 )
 _sym_db.RegisterEnumDescriptor(_DATASETPARTITIONNODESCHANGETYPE)
 
@@ -135,8 +135,8 @@ _PARTITIONCHANGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2015,
-  serialized_end=2243,
+  serialized_start=2233,
+  serialized_end=2461,
 )
 _sym_db.RegisterEnumDescriptor(_PARTITIONCHANGETYPE)
 
@@ -156,6 +156,75 @@ PartitionChangeBatchInsertValue = 3
 PartitionChangeBatchUpdateValue = 4
 PartitionChangeBatchDeleteValue = 5
 
+
+
+_LISTDATASETSREQUEST = _descriptor.Descriptor(
+  name='ListDatasetsRequest',
+  full_name='anndb_pb.ListDatasetsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='with_size', full_name='anndb_pb.ListDatasetsRequest.with_size', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=51,
+  serialized_end=91,
+)
+
+
+_GETDATASETREQUEST = _descriptor.Descriptor(
+  name='GetDatasetRequest',
+  full_name='anndb_pb.GetDatasetRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dataset_id', full_name='anndb_pb.GetDatasetRequest.dataset_id', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='with_size', full_name='anndb_pb.GetDatasetRequest.with_size', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=93,
+  serialized_end=151,
+)
 
 
 _INSERTREQUEST_METADATAENTRY = _descriptor.Descriptor(
@@ -191,8 +260,8 @@ _INSERTREQUEST_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=173,
-  serialized_end=220,
+  serialized_start=275,
+  serialized_end=322,
 )
 
 _INSERTREQUEST = _descriptor.Descriptor(
@@ -242,8 +311,8 @@ _INSERTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=52,
-  serialized_end=220,
+  serialized_start=154,
+  serialized_end=322,
 )
 
 
@@ -280,8 +349,8 @@ _UPDATEREQUEST_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=173,
-  serialized_end=220,
+  serialized_start=275,
+  serialized_end=322,
 )
 
 _UPDATEREQUEST = _descriptor.Descriptor(
@@ -331,8 +400,8 @@ _UPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=223,
-  serialized_end=391,
+  serialized_start=325,
+  serialized_end=493,
 )
 
 
@@ -369,8 +438,8 @@ _REMOVEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=393,
-  serialized_end=440,
+  serialized_start=495,
+  serialized_end=542,
 )
 
 
@@ -407,8 +476,8 @@ _BATCHITEM_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=173,
-  serialized_end=220,
+  serialized_start=275,
+  serialized_end=322,
 )
 
 _BATCHITEM = _descriptor.Descriptor(
@@ -458,8 +527,8 @@ _BATCHITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=443,
-  serialized_end=598,
+  serialized_start=545,
+  serialized_end=700,
 )
 
 
@@ -496,8 +565,8 @@ _BATCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=600,
-  serialized_end=670,
+  serialized_start=702,
+  serialized_end=772,
 )
 
 
@@ -541,8 +610,8 @@ _PARTITIONBATCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=672,
-  serialized_end=773,
+  serialized_start=774,
+  serialized_end=875,
 )
 
 
@@ -579,8 +648,8 @@ _BATCHRESPONSE_ERRORSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=845,
-  serialized_end=890,
+  serialized_start=947,
+  serialized_end=992,
 )
 
 _BATCHRESPONSE = _descriptor.Descriptor(
@@ -609,8 +678,77 @@ _BATCHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=775,
-  serialized_end=890,
+  serialized_start=877,
+  serialized_end=992,
+)
+
+
+_PARTITIONLENREQUEST = _descriptor.Descriptor(
+  name='PartitionLenRequest',
+  full_name='anndb_pb.PartitionLenRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dataset_id', full_name='anndb_pb.PartitionLenRequest.dataset_id', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='partition_id', full_name='anndb_pb.PartitionLenRequest.partition_id', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=994,
+  serialized_end=1057,
+)
+
+
+_PARTITIONLENRESPONSE = _descriptor.Descriptor(
+  name='PartitionLenResponse',
+  full_name='anndb_pb.PartitionLenResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='len', full_name='anndb_pb.PartitionLenResponse.len', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1059,
+  serialized_end=1094,
 )
 
 
@@ -663,6 +801,13 @@ _DATASET = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='size', full_name='anndb_pb.Dataset.size', index=6,
+      number=7, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -675,8 +820,8 @@ _DATASET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=893,
-  serialized_end=1059,
+  serialized_start=1097,
+  serialized_end=1277,
 )
 
 
@@ -713,8 +858,8 @@ _PARTITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1061,
-  serialized_end=1102,
+  serialized_start=1279,
+  serialized_end=1320,
 )
 
 
@@ -758,8 +903,8 @@ _DATASETMANAGERCHANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1104,
-  serialized_end=1215,
+  serialized_start=1322,
+  serialized_end=1433,
 )
 
 
@@ -810,8 +955,8 @@ _DATASETPARTITIONNODESCHANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1218,
-  serialized_end=1363,
+  serialized_start=1436,
+  serialized_end=1581,
 )
 
 
@@ -848,8 +993,8 @@ _PARTITIONCHANGE_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=173,
-  serialized_end=220,
+  serialized_start=275,
+  serialized_end=322,
 )
 
 _PARTITIONCHANGE = _descriptor.Descriptor(
@@ -920,8 +1065,8 @@ _PARTITIONCHANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1366,
-  serialized_end=1645,
+  serialized_start=1584,
+  serialized_end=1863,
 )
 
 
@@ -951,8 +1096,8 @@ _DATASETMANAGERSNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1647,
-  serialized_end=1708,
+  serialized_start=1865,
+  serialized_end=1926,
 )
 
 _INSERTREQUEST_METADATAENTRY.containing_type = _INSERTREQUEST
@@ -974,6 +1119,8 @@ _PARTITIONCHANGE.fields_by_name['type'].enum_type = _PARTITIONCHANGETYPE
 _PARTITIONCHANGE.fields_by_name['metadata'].message_type = _PARTITIONCHANGE_METADATAENTRY
 _PARTITIONCHANGE.fields_by_name['batch_items'].message_type = _BATCHITEM
 _DATASETMANAGERSNAPSHOT.fields_by_name['datasets'].message_type = _DATASET
+DESCRIPTOR.message_types_by_name['ListDatasetsRequest'] = _LISTDATASETSREQUEST
+DESCRIPTOR.message_types_by_name['GetDatasetRequest'] = _GETDATASETREQUEST
 DESCRIPTOR.message_types_by_name['InsertRequest'] = _INSERTREQUEST
 DESCRIPTOR.message_types_by_name['UpdateRequest'] = _UPDATEREQUEST
 DESCRIPTOR.message_types_by_name['RemoveRequest'] = _REMOVEREQUEST
@@ -981,6 +1128,8 @@ DESCRIPTOR.message_types_by_name['BatchItem'] = _BATCHITEM
 DESCRIPTOR.message_types_by_name['BatchRequest'] = _BATCHREQUEST
 DESCRIPTOR.message_types_by_name['PartitionBatchRequest'] = _PARTITIONBATCHREQUEST
 DESCRIPTOR.message_types_by_name['BatchResponse'] = _BATCHRESPONSE
+DESCRIPTOR.message_types_by_name['PartitionLenRequest'] = _PARTITIONLENREQUEST
+DESCRIPTOR.message_types_by_name['PartitionLenResponse'] = _PARTITIONLENRESPONSE
 DESCRIPTOR.message_types_by_name['Dataset'] = _DATASET
 DESCRIPTOR.message_types_by_name['Partition'] = _PARTITION
 DESCRIPTOR.message_types_by_name['DatasetManagerChange'] = _DATASETMANAGERCHANGE
@@ -992,6 +1141,20 @@ DESCRIPTOR.enum_types_by_name['DatasetManagerChangeType'] = _DATASETMANAGERCHANG
 DESCRIPTOR.enum_types_by_name['DatasetPartitionNodesChangeType'] = _DATASETPARTITIONNODESCHANGETYPE
 DESCRIPTOR.enum_types_by_name['PartitionChangeType'] = _PARTITIONCHANGETYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+ListDatasetsRequest = _reflection.GeneratedProtocolMessageType('ListDatasetsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _LISTDATASETSREQUEST,
+  __module__ = 'anndb.dataset_pb2'
+  # @@protoc_insertion_point(class_scope:anndb_pb.ListDatasetsRequest)
+  ))
+_sym_db.RegisterMessage(ListDatasetsRequest)
+
+GetDatasetRequest = _reflection.GeneratedProtocolMessageType('GetDatasetRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETDATASETREQUEST,
+  __module__ = 'anndb.dataset_pb2'
+  # @@protoc_insertion_point(class_scope:anndb_pb.GetDatasetRequest)
+  ))
+_sym_db.RegisterMessage(GetDatasetRequest)
 
 InsertRequest = _reflection.GeneratedProtocolMessageType('InsertRequest', (_message.Message,), dict(
 
@@ -1074,6 +1237,20 @@ BatchResponse = _reflection.GeneratedProtocolMessageType('BatchResponse', (_mess
 _sym_db.RegisterMessage(BatchResponse)
 _sym_db.RegisterMessage(BatchResponse.ErrorsEntry)
 
+PartitionLenRequest = _reflection.GeneratedProtocolMessageType('PartitionLenRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PARTITIONLENREQUEST,
+  __module__ = 'anndb.dataset_pb2'
+  # @@protoc_insertion_point(class_scope:anndb_pb.PartitionLenRequest)
+  ))
+_sym_db.RegisterMessage(PartitionLenRequest)
+
+PartitionLenResponse = _reflection.GeneratedProtocolMessageType('PartitionLenResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PARTITIONLENRESPONSE,
+  __module__ = 'anndb.dataset_pb2'
+  # @@protoc_insertion_point(class_scope:anndb_pb.PartitionLenResponse)
+  ))
+_sym_db.RegisterMessage(PartitionLenResponse)
+
 Dataset = _reflection.GeneratedProtocolMessageType('Dataset', (_message.Message,), dict(
   DESCRIPTOR = _DATASET,
   __module__ = 'anndb.dataset_pb2'
@@ -1137,15 +1314,15 @@ _DATASETMANAGER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2246,
-  serialized_end=2469,
+  serialized_start=2464,
+  serialized_end=2700,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',
     full_name='anndb_pb.DatasetManager.List',
     index=0,
     containing_service=None,
-    input_type=anndb_dot_core__pb2._EMPTYMESSAGE,
+    input_type=_LISTDATASETSREQUEST,
     output_type=_DATASET,
     serialized_options=None,
   ),
@@ -1154,7 +1331,7 @@ _DATASETMANAGER = _descriptor.ServiceDescriptor(
     full_name='anndb_pb.DatasetManager.Get',
     index=1,
     containing_service=None,
-    input_type=anndb_dot_core__pb2._UUIDREQUEST,
+    input_type=_GETDATASETREQUEST,
     output_type=_DATASET,
     serialized_options=None,
   ),
@@ -1188,8 +1365,8 @@ _DATAMANAGER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=2472,
-  serialized_end=3100,
+  serialized_start=2703,
+  serialized_end=3410,
   methods=[
   _descriptor.MethodDescriptor(
     name='Insert',
@@ -1270,6 +1447,15 @@ _DATAMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_PARTITIONBATCHREQUEST,
     output_type=_BATCHRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='PartitionLen',
+    full_name='anndb_pb.DataManager.PartitionLen',
+    index=9,
+    containing_service=None,
+    input_type=_PARTITIONLENREQUEST,
+    output_type=_PARTITIONLENRESPONSE,
     serialized_options=None,
   ),
 ])

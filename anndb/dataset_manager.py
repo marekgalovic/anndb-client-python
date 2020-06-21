@@ -3,7 +3,7 @@ from uuid import UUID
 
 from anndb.dataset_pb2_grpc import DatasetManagerStub, DataManagerStub
 from anndb.search_pb2_grpc import SearchStub
-from anndb.dataset_pb2 import Dataset as DatasetPb, Space as SpacePb
+from anndb.dataset_pb2 import Dataset as DatasetPb, Space as SpacePb, ListDatasetsRequest, GetDatasetRequest
 from anndb.core_pb2 import UUIDRequest, EmptyMessage
 
 from anndb.dataset import Dataset
@@ -16,12 +16,12 @@ class DatasetManager:
 		self._data_manager_stub = DataManagerStub(conn)
 		self._search_stub = SearchStub(conn)
 
-	def list(self) -> Iterator[DatasetPb]:
-		for pb in self._dataset_manager_stub.List(EmptyMessage()):
+	def list(self, with_size:bool=False) -> Iterator[DatasetPb]:
+		for pb in self._dataset_manager_stub.List(ListDatasetsRequest(with_size=with_size)):
 			yield pb
 
-	def get(self, id:UUID) -> Dataset:
-		proto = self._dataset_manager_stub.Get(UUIDRequest(id=id.bytes))
+	def get(self, id:UUID, with_size:bool=False) -> Dataset:
+		proto = self._dataset_manager_stub.Get(GetDatasetRequest(dataset_id=id.bytes, with_size=with_size))
 
 		return Dataset(self._data_manager_stub, self._search_stub, proto)
 

@@ -17,12 +17,12 @@ class DatasetManagerStub(object):
     """
     self.List = channel.unary_stream(
         '/anndb_pb.DatasetManager/List',
-        request_serializer=anndb_dot_core__pb2.EmptyMessage.SerializeToString,
+        request_serializer=anndb_dot_dataset__pb2.ListDatasetsRequest.SerializeToString,
         response_deserializer=anndb_dot_dataset__pb2.Dataset.FromString,
         )
     self.Get = channel.unary_unary(
         '/anndb_pb.DatasetManager/Get',
-        request_serializer=anndb_dot_core__pb2.UUIDRequest.SerializeToString,
+        request_serializer=anndb_dot_dataset__pb2.GetDatasetRequest.SerializeToString,
         response_deserializer=anndb_dot_dataset__pb2.Dataset.FromString,
         )
     self.Create = channel.unary_unary(
@@ -74,12 +74,12 @@ def add_DatasetManagerServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'List': grpc.unary_stream_rpc_method_handler(
           servicer.List,
-          request_deserializer=anndb_dot_core__pb2.EmptyMessage.FromString,
+          request_deserializer=anndb_dot_dataset__pb2.ListDatasetsRequest.FromString,
           response_serializer=anndb_dot_dataset__pb2.Dataset.SerializeToString,
       ),
       'Get': grpc.unary_unary_rpc_method_handler(
           servicer.Get,
-          request_deserializer=anndb_dot_core__pb2.UUIDRequest.FromString,
+          request_deserializer=anndb_dot_dataset__pb2.GetDatasetRequest.FromString,
           response_serializer=anndb_dot_dataset__pb2.Dataset.SerializeToString,
       ),
       'Create': grpc.unary_unary_rpc_method_handler(
@@ -153,6 +153,11 @@ class DataManagerStub(object):
         request_serializer=anndb_dot_dataset__pb2.PartitionBatchRequest.SerializeToString,
         response_deserializer=anndb_dot_dataset__pb2.BatchResponse.FromString,
         )
+    self.PartitionLen = channel.unary_unary(
+        '/anndb_pb.DataManager/PartitionLen',
+        request_serializer=anndb_dot_dataset__pb2.PartitionLenRequest.SerializeToString,
+        response_deserializer=anndb_dot_dataset__pb2.PartitionLenResponse.FromString,
+        )
 
 
 class DataManagerServicer(object):
@@ -222,6 +227,13 @@ class DataManagerServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def PartitionLen(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_DataManagerServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -269,6 +281,11 @@ def add_DataManagerServicer_to_server(servicer, server):
           servicer.PartitionBatchRemove,
           request_deserializer=anndb_dot_dataset__pb2.PartitionBatchRequest.FromString,
           response_serializer=anndb_dot_dataset__pb2.BatchResponse.SerializeToString,
+      ),
+      'PartitionLen': grpc.unary_unary_rpc_method_handler(
+          servicer.PartitionLen,
+          request_deserializer=anndb_dot_dataset__pb2.PartitionLenRequest.FromString,
+          response_serializer=anndb_dot_dataset__pb2.PartitionLenResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
